@@ -19,7 +19,7 @@
 1. Attack the watermarked images and save them in the same PNG format and filename in a new folder.
 
 ### Evaluate
-1. Evaluate with `erasinginvisible eval --path <attacked_watermarked_image_path> --orgpath <unwatermarked_image_path>`. A simple report of various watermark performance and image quality metrics will be printed on screen.
+1. Evaluate with `erasinginvisible eval --path <attacked_watermarked_image_path> --w_path <watermarked_image_path> --uw_path <unwatermarked_image_path>`. A simple report of various watermark performance and image quality metrics will be printed on screen.
 
 ## Other Informations
 ### Metrics

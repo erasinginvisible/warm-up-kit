@@ -41,14 +41,15 @@ def run_command(script_name, path, orgpath, isorg, args):
 
 @click.command()
 @click.option("--path", "-p", default="./", help="Attacked image directory.")
-@click.option("--orgpath", "-p", default="./", help="Original image directory.")
+@click.option("--w_path", "-w", default="./", help="Watermarked image directory.")
+@click.option("--uw_path", "-u", default="./", help="Unwatermarked image directory.")
 @click.argument("args", nargs=-1)
-def eval(path, orgpath, args):
+def eval(path, w_path, uw_path, args):
 
-    run_command("decode", orgpath, None, True, args)
+    run_command("decode", uw_path, None, True, args)
     run_command("decode", path, None, False, args)
-    run_command("metric", orgpath, path, True, args)
-    run_command("metric", path, orgpath, False, args)
+    run_command("metric", w_path, path, True, args)
+    run_command("metric", path, w_path, False, args)
 
     performance_dict = get_performance_from_jsons(
         os.path.join(
